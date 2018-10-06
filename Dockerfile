@@ -15,7 +15,7 @@ RUN npm install -g serverless
 RUN npm install -g @angular/cli
 
 RUN apk update \
-   && apk install python-dev \
+   && apk add python-dev \
    && curl -O https://bootstrap.pypa.io/get-pip.py \
    && python get-pip.py \
    && pip install awscli \
