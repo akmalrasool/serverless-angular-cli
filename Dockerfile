@@ -19,5 +19,4 @@ RUN apk update \
    && curl -O https://bootstrap.pypa.io/get-pip.py \
    && python get-pip.py \
    && pip install awscli \
-   && apk clean \
    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
