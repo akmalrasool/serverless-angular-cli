@@ -1,6 +1,5 @@
 FROM node:8.12.0-alpine
 
-LABEL MAINTAINER="Ayyaz Zafar <contact@ayyaz.io>"
 
 #Linux setup
 RUN apk update \
@@ -14,3 +13,11 @@ RUN npm install -g serverless
 
 #Angular CLI
 RUN npm install -g @angular/cli
+
+RUN apk update \
+   && apk install -y python-dev \
+   && curl -O https://bootstrap.pypa.io/get-pip.py \
+   && python get-pip.py \
+   && pip install awscli \
+   && apk clean \
+   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
